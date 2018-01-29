@@ -1,0 +1,26 @@
+<div>
+  <h2>Real Time Data</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sl No</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let people of peoples; let i = index"
+        [attr.data-index]="i"
+        [ngClass]="i % 2 === 0 ? 'even-row' : 'odd-row'"
+      >
+        <td>{{i + 1}}</td>
+        <td>{{people.name}}</td>
+        <td>{{people.gender}}</td>
+        <td>{{people.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

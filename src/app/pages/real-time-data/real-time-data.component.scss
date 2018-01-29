@@ -1,0 +1,22 @@
+@import '../../../_variables';
+
+.table {
+    thead {
+        background-color: $rt-head-background;
+    }
+    tbody {
+        td {
+            outline: 1px solid #fff;
+        }
+        .even-row {
+            td {
+                background-color: $rt-even-row-background;
+            }
+        }
+        .odd-row {
+            td {
+                background-color: $rt-odd-row-background;
+            }    
+        }
+    }
+}

@@ -1,0 +1,3 @@
+{ name: 'John', gender: 'M', email: 'john@gmail.com' }
+{ name: 'Smith', gender: 'M', email: 'smith@gmail.com' }
+{ name: 'Dyana', gender: 'F', email: 'dyana@gmail.com' }

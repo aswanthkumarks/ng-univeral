@@ -33,10 +33,8 @@ app.engine('html', ngExpressEngine({
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
 
-// TODO: implement data requests securely
-app.get('/api/*', (req, res) => {
-    res.status(404).send('data requests are not supported');
-});
+const apiRoutes = require('./api-server-src/route.data');
+app.use('/api/', apiRoutes);
 
 // Server static files from /browser
 app.get('*.*', express.static(join(DIST_FOLDER, 'browser')));
@@ -49,4 +47,15 @@ app.get('*', (req, res) => {
 // Start up the Node server
 app.listen(PORT, () => {
     console.log(`Node server listening on http://localhost:${PORT}`);
+});
+
+/**
+ * Streaming Service
+ */
+
+const socketConnectionService = require('./api-server-src/socket.service');
+const streamingServer = socketConnectionService.startSocketServer(app);
+
+streamingServer.listen(PORT + 1, function () {
+    console.log('Socket Server running on ' + (PORT + 1));
 });

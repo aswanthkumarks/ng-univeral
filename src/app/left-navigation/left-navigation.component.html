@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let link of links">
+    <a routerLink={{link.target}} routerLinkActive="active-link">{{link.label}}</a>
+  </li>
+</ul>

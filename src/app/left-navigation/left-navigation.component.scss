@@ -1,0 +1,27 @@
+@import '../../_variables';
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        a {
+            display: block;
+            padding: 3px 5px;
+            line-height: 25px;
+            font-size: 18px;
+            text-decoration: none;
+            color: $default-font-color;
+
+            &:hover {
+                box-shadow: 2px 5px 16px #787878;
+            }            
+            &:hover, &.active-link {
+                text-decoration: none;
+                color: $nav-link-active-color;
+                background: $nav-active-background;
+            }
+        }        
+    }
+}
